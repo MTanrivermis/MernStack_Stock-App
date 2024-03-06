@@ -30,7 +30,10 @@ dbConnection()
 app.use(express.json())
 
 // Cors
-app.use(require('cors')()) // Run with defaults.
+//app.use(require('cors')()) // Run with defaults.
+app.use(cors({
+    origin: 'https://mern-stack-stock-app-l1bt.vercel.app/'
+}));
 
 // Call static uploadFile:
 app.use('/upload', express.static('./upload'))
